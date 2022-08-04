@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.weapp_SpringBoot.mapper.ArticleMapper">
+    <insert id="newArticle" parameterType="Article">
+        INSERT INTO article(id,type,time,title,content,img) values(#{id},#{type},#{time},#{title},#{content},#{img})
+    </insert>
+    <update id="updataArticle" parameterType="Article">
+        Update article Set id=#{id},type=#{type},title=#{title},time=#{time},content=#{content},img=#{img} Where id=#{id};
+    </update>
+    <delete id="deleteArtilce" parameterType="string">
+        DELETE  FROM article where id=#{id}
+    </delete>
+
+    <select id="getArticleList" resultType="cn.edu.guet.weapp_SpringBoot.bean.Article">
+        select * from article
+    </select>
+    <select id="getArticleContent" resultType="java.lang.String" parameterType="string">
+        select content from article where id=#{id}
+    </select>
+
+</mapper>
