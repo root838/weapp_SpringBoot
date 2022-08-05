@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.weapp_SpringBoot.mapper.SysCarouselMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.guet.weapp_SpringBoot.bean.LoopImg">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+        <result column="subtitle" jdbcType="VARCHAR" property="subtitle"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, url, describe ,title
+    </sql>
+    <select id="getCarousel" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select *
+        from loopImg
+    </select>
+
+    <delete id="delPic" parameterType="string">
+        delete from loopImg where id=#{id}
+    </delete>
+
+    <insert id="insertPic" parameterType="LoopImg">
+            insert into loopImg(id,url,subtitle,title) values(#{id},#{url},#{subtitle},#{title})
+    </insert>
+
+    <update id="updataPic" parameterType="LoopImg">
+            update loopImg set  id=#{id},url=#{url},subtitle=#{subtitle},title=#{title}  Where id=#{id}
+    </update>
+</mapper>
