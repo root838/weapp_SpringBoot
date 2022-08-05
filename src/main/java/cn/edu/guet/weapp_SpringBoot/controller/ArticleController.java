@@ -20,7 +20,7 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
-    @PreAuthorize("hasAuthority('sys:aricle:view')")
+    //@PreAuthorize("hasAuthority('sys:aricle:view')")
     @GetMapping(value = "/getAricleList")
     public HttpResult getAricleList() {
         System.out.println("查找文章列表" );
