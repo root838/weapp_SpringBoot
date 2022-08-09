@@ -39,4 +39,28 @@ public class ArticleServiceImpl implements ArticleService {
     public int deleteAricle(String id) {
         return aricleMapper.deleteArtilce(id);
     }
+
+
+    /*
+        下面是有关小程序的接口
+       1.查询所有文章 ：/getAllArticle
+       2.用户输入搜索框,模糊查询 ：/searchArticle
+       3.根据特定文章类型查询所有文章 ：/getArticleByType
+    */
+    // 1.查询所有文章 ：/getAllArticle
+    @Override
+    public List<Article> getAllArticle() {
+        return aricleMapper.getAllArticle();
+    }
+
+    //2.模糊查询文章 ：/searchArticle
+    @Override
+    public List<Article> searchArticle(String searchCondition) {
+        return aricleMapper.searchArticle(searchCondition);
+    }
+
+    //3.根据文章类型获取文章列表
+    public List<Article> getArticleByType(String type) {
+        return aricleMapper.getArticleByType(type);
+    }
 }
