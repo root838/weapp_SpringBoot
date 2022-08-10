@@ -92,7 +92,8 @@ public class ArticleController {
         1.查询所有文章 ：/getAllArticle
         2.用户输入搜索框,模糊查询 ：/searchArticle
         3.根据特定文章类型查询所有文章 ：/getArticleByType
-        4.用户对文章的收藏 ： /userCollectArticle
+        4.用户对文章的收藏(两个接口) ： /userCollectArticle
+        4.1：查询当前用户对当前文章是否已经收藏：select
     */
 
     // 1.查询所有文章 ：/getAllArticle
