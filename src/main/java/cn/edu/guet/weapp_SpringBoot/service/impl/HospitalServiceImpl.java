@@ -1,6 +1,7 @@
 package cn.edu.guet.weapp_SpringBoot.service.impl;
 
 import cn.edu.guet.weapp_SpringBoot.bean.Hospital;
+import cn.edu.guet.weapp_SpringBoot.bean.User_Hospital;
 import cn.edu.guet.weapp_SpringBoot.mapper.HospitalMapper;
 import cn.edu.guet.weapp_SpringBoot.service.HospitalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,11 @@ public class HospitalServiceImpl implements HospitalService {
 
     @Override
     public List<Hospital> getHospitalList() {
-        List<Hospital> h = hospitalMapper.getHospitalList();
-        for (Hospital hospital : h) {
-            System.out.println(hospital.getId());
-            System.out.println(hospital.getName());
-        }
         return hospitalMapper.getHospitalList();
+    }
+
+    @Override
+    public List<User_Hospital> getUserHospitalList() {
+        return hospitalMapper.getUserHospitalList();
     }
 }

@@ -1,6 +1,7 @@
 package cn.edu.guet.weapp_SpringBoot.service;
 
 import cn.edu.guet.weapp_SpringBoot.bean.Hospital;
+import cn.edu.guet.weapp_SpringBoot.bean.User_Hospital;
 
 import java.util.List;
 
@@ -10,4 +11,5 @@ import java.util.List;
  */
 public interface HospitalService {
     List<Hospital> getHospitalList();
+    List<User_Hospital> getUserHospitalList();
 }
