@@ -15,4 +15,10 @@
         delete from collections
         where open_id=#{open_id} and article_id=#{article_id}
     </delete>
+
+    <select id="getAllArticleUserCollected" resultType="cn.edu.guet.weapp_SpringBoot.bean.Article">
+        select * from article
+        where id in(select article_id from collections where  open_id = #{value})
+    </select>
+
 </mapper>

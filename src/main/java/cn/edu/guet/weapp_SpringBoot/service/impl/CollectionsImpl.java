@@ -1,10 +1,13 @@
 package cn.edu.guet.weapp_SpringBoot.service.impl;
 
+import cn.edu.guet.weapp_SpringBoot.bean.Article;
 import cn.edu.guet.weapp_SpringBoot.bean.Collections;
 import cn.edu.guet.weapp_SpringBoot.mapper.CollectionsMapper;
 import cn.edu.guet.weapp_SpringBoot.service.CollectionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CollectionsImpl implements CollectionsService {
@@ -24,5 +27,10 @@ public class CollectionsImpl implements CollectionsService {
     @Override
     public int deleteUserCollectArticle(String open_id, String article_id) {
         return collectionsMapper.deleteUserCollectArticle(open_id, article_id);
+    }
+
+    @Override
+    public List<Article> getAllArticleUserCollected(String open_id) {
+        return collectionsMapper.getAllArticleUserCollected(open_id);
     }
 }
