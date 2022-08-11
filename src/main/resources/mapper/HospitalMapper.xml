@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.weapp_SpringBoot.mapper.HospitalMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.guet.weapp_SpringBoot.bean.Hospital">
+        <id column="hospital_id" jdbcType="VARCHAR" property="id"/>
+        <result column="hospital_name" jdbcType="VARCHAR" property="name"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="phone_number" jdbcType="VARCHAR" property="phone"/>
+        <result column="introduce" jdbcType="LONGVARCHAR" property="synopsis"/>
+        <result column="score" jdbcType="INTEGER" property="score"/>
+        <result column="like" jdbcType="INTEGER" property="likeNum"/>
+        <result column="img_url" jdbcType="VARCHAR" property="image"/>
+        <result column="remaing" jdbcType="INTEGER" property="remaing"/>
+        <result column="isHot" jdbcType="TINYINT" property="isHot"/>
+    </resultMap>
+    <select id="getHospitalList" resultMap="BaseResultMap">
+        SELECT * FROM hospital
+    </select>
+</mapper>
