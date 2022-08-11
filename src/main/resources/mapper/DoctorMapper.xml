@@ -4,6 +4,7 @@
     <resultMap id="BaseResultMap" type="cn.edu.guet.weapp_SpringBoot.bean.Doctor">
         <id column="doctor_id" jdbcType="VARCHAR" property="doctorId"></id>
         <result column="avatar" jdbcType="VARCHAR" property="avatar"></result>
+        <result column="hospital_id" jdbcType="VARCHAR" property="hospitalId"></result>
         <result column="doctor_name" jdbcType="VARCHAR" property="doctorName"></result>
         <result column="position" jdbcType="VARCHAR" property="position"></result>
         <result column="skill" jdbcType="VARCHAR" property="skill"></result>
