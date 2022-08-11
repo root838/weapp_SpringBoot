@@ -16,13 +16,30 @@
 
     <insert id="insertMsg" parameterType="cn.edu.guet.weapp_SpringBoot.bean.Doctor">
         Insert into doctor
-        VALUES (#{doctor.id},#{doctor.hospitalId},#{doctor.avatar},#{doctor.name},#{doctor.position},#{doctor.skill},#{doctor.seeing})
+        VALUES (#{doctor.doctorId}, #{doctor.hospitalId}, #{doctor.avatar}, #{doctor.doctorName}, #{doctor.position},
+                #{doctor.skill}, #{doctor.seeing})
     </insert>
 
     <select id="getDoctorMsg" resultMap="BaseResultMap">
---         SELECT d.id,h.`name`,d.avatar,d.`name`,d.position,d.skill,d.seeing
         SELECT *
-        FROM doctor d,hospital h
-        WHERE d.hospital_id=h.hospital_id
+        FROM doctor d,
+             hospital h
+        WHERE d.hospital_id = h.hospital_id
     </select>
+
+    <delete id="deleteDoctor" parameterType="string">
+        DELETE
+        FROM doctor
+        WHERE doctor_id = #{ID}
+    </delete>
+
+    <update id="updateDoctor" parameterType="cn.edu.guet.weapp_SpringBoot.bean.Doctor_Update">
+        UPDATE doctor
+        SET hospital_id=(
+            SELECT hospital_id
+            FROM hospital
+            WHERE hospital_name=#{updateForm.hospitalId}
+        ),doctor_id=#{updateForm.doctorId},avatar=#{updateForm.avatar},doctor_name=#{updateForm.doctorName},position=#{updateForm.position},skill=#{updateForm.skill}
+        WHERE doctor_id=#{updateForm.selectId}
+    </update>
 </mapper>
