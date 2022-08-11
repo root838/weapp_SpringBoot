@@ -1,5 +1,6 @@
 package cn.edu.guet.weapp_SpringBoot.controller;
 
+import cn.edu.guet.weapp_SpringBoot.bean.Article;
 import cn.edu.guet.weapp_SpringBoot.bean.Collections;
 import cn.edu.guet.weapp_SpringBoot.service.CollectionsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -53,4 +55,8 @@ public class CollectionsController {
         }
     }
 
+    @GetMapping("/getAllArticleUserCollected")
+    public List<Article> getAllArticleUserCollected(String open_id){
+        return collectionsService.getAllArticleUserCollected(open_id);
+    }
 }
