@@ -22,4 +22,9 @@ public class HospitalController {
     public HttpResult getHospitalList(){
         return HttpResult.ok(hospitalService.getHospitalList());
     }
+
+    @GetMapping(value = "/getUserHospitalList")
+    public HttpResult getUserHospitalList(){
+        return HttpResult.ok(hospitalService.getUserHospitalList());
+    }
 }

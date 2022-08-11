@@ -16,4 +16,7 @@
     <select id="getHospitalList" resultMap="BaseResultMap">
         SELECT * FROM hospital
     </select>
+    <select id="getUserHospitalList" resultType="cn.edu.guet.weapp_SpringBoot.bean.User_Hospital">
+        SELECT * FROM user_hospital
+    </select>
 </mapper>
