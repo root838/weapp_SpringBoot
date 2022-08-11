@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>cn.edu.guet</groupId>
 	<artifactId>weapp_SpringBoot</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>weapp_SpringBoot</name>
 	<description>Demo project for Spring Boot</description>
