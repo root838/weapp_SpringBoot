@@ -5,6 +5,7 @@ import cn.edu.guet.weapp_SpringBoot.bean.Doctor_Update;
 import cn.edu.guet.weapp_SpringBoot.http.HttpResult;
 import cn.edu.guet.weapp_SpringBoot.mapper.SysCarouselMapper;
 import cn.edu.guet.weapp_SpringBoot.service.DoctorService;
+import org.apache.catalina.User;
 import org.apache.ibatis.annotations.Insert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,7 @@ public class DoctorController {
     //    private String baseUrl="http://47.95.223.172/img/";
     private String baseUrl="C:/Users/MECHREVO/Desktop/img/";//src地址
     private String src = "";
+    Doctor doctor=new Doctor();
 
     @Autowired
     private DoctorService doctorService;
@@ -67,11 +69,13 @@ public class DoctorController {
         return HttpResult.ok(src);
     }
 
-    @PostMapping(value = "/deleteMsg")
+    @GetMapping (value = "/deleteMsg")
     public HttpResult deleteMsg(String selectId){
+        System.out.println(selectId);
         try{
+            System.out.println(selectId);
             doctorService.deleteDoctor(selectId);
-            return HttpResult.ok("删除成功");
+            return HttpResult.ok(doctor);
         }catch (Exception e){
             return HttpResult.error("删除失败");
         }
