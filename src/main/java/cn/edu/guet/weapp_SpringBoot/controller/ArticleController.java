@@ -85,4 +85,35 @@ public class ArticleController {
         aricle.setImg("/src/main/resources/images/"+id+".png");
         return articleService.updataAricle(aricle);
     }
+
+    /*
+        hsz小程序：健康咨询模块有关接口,即使管理后台中可能已经有现成的接口（上面的代码）使用
+        但是我这边再写一遍，一是增加对后端的理解，二是区分后台和小程序的接口（自己写的接口理解起来更快）
+        1.查询所有文章 ：/getAllArticle
+        2.用户输入搜索框,模糊查询 ：/searchArticle
+        3.根据特定文章类型查询所有文章 ：/getArticleByType
+        4.用户对文章的收藏(两个接口) ： /userCollectArticle
+        4.1：查询当前用户对当前文章是否已经收藏：select
+    */
+
+    // 1.查询所有文章 ：/getAllArticle
+    @GetMapping("/getAllArticle")
+    public List<Article> getAllArticle(){
+        return articleService.getAllArticle();
+    }
+
+    // 2.用户输入搜索框,模糊查询 ：/searchArticle
+    @GetMapping("/searchArticle")
+    public List<Article> searchArticle(String conditions){
+        String searchCondition = "%"+conditions+"%";
+        System.out.println("查询条件="+searchCondition);
+        return articleService.searchArticle(searchCondition);
+    }
+
+    // 3.根据特定文章类型查询所有文章 ：/getArticleByType
+    @GetMapping("/getArticleByType")
+    public List<Article> getArticleByType(String type){
+        System.out.println("type = "+type);
+        return articleService.getArticleByType(type);
+    }
 }

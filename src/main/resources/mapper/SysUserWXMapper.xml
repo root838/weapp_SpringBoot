@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.weapp_SpringBoot.mapper.SysUserWXMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.guet.weapp_SpringBoot.bean.SysUserWX">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="avatar" jdbcType="VARCHAR" property="avatar"/>
+        <result column="gender" jdbcType="VARCHAR" property="gender"/>
+        <result column="idcard_type" jdbcType="VARCHAR" property="idcard_type"/>
+        <result column="idcard_number" jdbcType="VARCHAR" property="idcard_number"/>
+        <result column="birthday" jdbcType="TIMESTAMP" property="birthday"/>
+        <result column="phone_number" jdbcType="VARCHAR" property="phone_number"/>
+
+    </resultMap>
+    <sql id="Base_Column_List">
+        id
+        , name, remark, create_by, create_time, last_update_by, last_update_time, del_flag
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_role
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="findAll" resultMap="BaseResultMap">
+        select *
+        from user
+        where id=#{id}
+    </select>
+    <insert id="create" parameterType="SysUserWX">
+        INSERT INTO user(id,avatar,name,gender,idcard_type,idcard_number,birthday,phone_number) values(#{id},#{avatar},"","1","居民身份证","","2022-4-22","")
+    </insert>
+    <insert id="savaAll" parameterType="SysUserWX">
+        UPDATE user SET name=#{name},gender=#{gender},idcard_type=#{idcard_type},idcard_number=#{idcard_number},birthday=#{birthday},phone_number=#{phone_number} WHERE id=#{id}
+    </insert>
+</mapper>
