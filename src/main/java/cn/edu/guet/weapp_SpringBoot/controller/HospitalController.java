@@ -5,6 +5,7 @@ import cn.edu.guet.weapp_SpringBoot.service.HospitalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -21,6 +22,11 @@ public class HospitalController {
     @GetMapping(value = "/getHospitalList")
     public HttpResult getHospitalList(){
         return HttpResult.ok(hospitalService.getHospitalList());
+    }
+
+    @GetMapping(value = "/search")
+    public HttpResult searchHospital(@RequestParam String name){
+        return HttpResult.ok(hospitalService.searchHospital(name));
     }
 
     @GetMapping(value = "/getUserHospitalList")
