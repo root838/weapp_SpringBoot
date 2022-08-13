@@ -21,7 +21,8 @@
     <!-- 下面是小程序的接口 -->
     <!-- 1.获取所有文章 -->
     <select id="getAllArticle" resultType="cn.edu.guet.weapp_SpringBoot.bean.Article">
-        select * from article
+--         select id,type,date_format(time,'%Y-%m-%d') time,title,content,img from article
+        select * from article order by time desc
     </select>
     <!-- 2.模糊查询特定文章 -->
     <select id="searchArticle" resultType="cn.edu.guet.weapp_SpringBoot.bean.Article">

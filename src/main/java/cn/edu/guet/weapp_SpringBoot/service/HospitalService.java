@@ -11,5 +11,6 @@ import java.util.List;
  */
 public interface HospitalService {
     List<Hospital> getHospitalList();
+    List<Hospital> searchHospital(String name);
     List<User_Hospital> getUserHospitalList();
 }
