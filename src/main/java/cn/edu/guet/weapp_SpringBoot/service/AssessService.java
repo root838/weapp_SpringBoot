@@ -10,4 +10,6 @@ public interface AssessService {
     List<Question> findAllQuestion();
     //完成评估后加入结果
     void addResult(Result result);
+    //获取进行过评估的人数
+    int getAssessNum();
 }

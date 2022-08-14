@@ -23,4 +23,9 @@ public class AssessServiceImpl implements AssessService {
     public void addResult(Result result) {
         assessMapper.addResult(result);
     }
+
+    @Override
+    public int getAssessNum() {
+        return assessMapper.getAssessNum();
+    }
 }

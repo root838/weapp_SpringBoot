@@ -11,4 +11,9 @@
         VALUES(#{Result.openid},#{Result.constitution},#{Result.performance},#{Result.opinion})
     </insert>
 
+    <select id="getAssessNum" resultType="int">
+        SELECT COUNT(*)
+        FROM(SELECT openid FROM result GROUP BY openid) x
+    </select>
+
 </mapper>

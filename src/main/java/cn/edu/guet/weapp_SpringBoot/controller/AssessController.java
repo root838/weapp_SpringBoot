@@ -27,4 +27,12 @@ public class AssessController {
         assessService.addResult(result);
         return HttpResult.ok("插入成功");
     }
+
+    @GetMapping(value = "/countPeople")
+    public HttpResult getAssessNum(){
+        HttpResult httpResult=HttpResult.ok();
+        httpResult.setMsg("获取成功");
+        httpResult.setData(assessService.getAssessNum());
+        return httpResult;
+    }
 }
