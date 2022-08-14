@@ -1,8 +1,6 @@
-package cn.edu.guet.weapp_SpringBoot.Aspect;
-
+package cn.edu.guet.weapp_SpringBoot.aspect;
 
 import cn.edu.guet.weapp_SpringBoot.bean.BaseModel;
-
 public class SysLog extends BaseModel {
 
     private String userName;
