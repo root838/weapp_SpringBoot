@@ -1,4 +1,4 @@
-package cn.edu.guet.weapp_SpringBoot.Aspect;
+package cn.edu.guet.weapp_SpringBoot.bean;
 
 
 import cn.edu.guet.weapp_SpringBoot.bean.BaseModel;
@@ -65,4 +65,15 @@ public class SysLog extends BaseModel {
 		this.ip = ip;
 	}
 
+	@Override
+	public String toString() {
+		return "SysLog{" +
+				"userName='" + userName + '\'' +
+				", operation='" + operation + '\'' +
+				", method='" + method + '\'' +
+				", params='" + params + '\'' +
+				", time=" + time +
+				", ip='" + ip + '\'' +
+				'}';
+	}
 }
