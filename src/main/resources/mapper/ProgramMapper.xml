@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.weapp_SpringBoot.mapper.ProgramMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.guet.weapp_SpringBoot.bean.Program">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="hospital_id" jdbcType="VARCHAR" property="hospital_id"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="views" jdbcType="INTEGER" property="views"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        , name, remark, create_by, create_time, last_update_by, last_update_time, del_flag
+    </sql>
+    <select id="getProgramList" resultMap="BaseResultMap">
+        select *
+        from program
+    </select>
+
+</mapper>
