@@ -33,4 +33,10 @@ public class CollectionsImpl implements CollectionsService {
     public List<Article> getAllArticleUserCollected(String open_id) {
         return collectionsMapper.getAllArticleUserCollected(open_id);
     }
+
+    @Override
+    public List<Article> searchCollection(String searchCondition,String open_id) {
+        return collectionsMapper.searchCollection(searchCondition,open_id);
+    }
+
 }

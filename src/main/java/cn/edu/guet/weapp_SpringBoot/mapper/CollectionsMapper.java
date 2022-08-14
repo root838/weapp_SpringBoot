@@ -16,4 +16,6 @@ public interface CollectionsMapper {
     int deleteUserCollectArticle(@Param("open_id")String open_id,@Param("article_id")String article_id);
 
     List<Article> getAllArticleUserCollected(String open_id);
+
+    List<Article> searchCollection(String searchCondition,String open_id);
 }

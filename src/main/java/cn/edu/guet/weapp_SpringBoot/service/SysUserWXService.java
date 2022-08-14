@@ -1,4 +1,5 @@
 package cn.edu.guet.weapp_SpringBoot.service;
+import cn.edu.guet.weapp_SpringBoot.bean.HResult;
 import cn.edu.guet.weapp_SpringBoot.bean.SysUserWX;
 import java.util.List;
 
@@ -19,4 +20,5 @@ public interface SysUserWXService {
     List<SysUserWX> findAll(String id);
     int create(SysUserWX sysUserwx);
     int savaAll(SysUserWX sysUserwx);
+    List<HResult> findResult(String openid);
 }

@@ -21,4 +21,10 @@
         where id in(select article_id from collections where  open_id = #{value})
     </select>
 
+    <select id="searchCollection" resultType="cn.edu.guet.weapp_SpringBoot.bean.Article">
+        select * from article
+        where id in(select article_id from collections where open_id = #{open_id}) and (title like #{searchCondition} or content like #{searchCondition})
+
+        order by time desc
+    </select>
 </mapper>

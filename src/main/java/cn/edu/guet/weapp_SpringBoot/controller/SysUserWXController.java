@@ -24,11 +24,19 @@ public class SysUserWXController {
     @Autowired
     private SysUserWXService sysUserWXService;
 
-    //@PreAuthorize("hasAuthority('sys:usert:view')")
+    //拿到用户数据
     @GetMapping(value = "/findAll")
     public HttpResult findAll(String id) {
         System.out.println("dvfd");
         return HttpResult.ok(sysUserWXService.findAll(id));
+    }
+
+
+    //拿到结果信息
+    @GetMapping(value = "/findresult")
+    public HttpResult findResult(String openid) {
+        System.out.println("~~~");
+        return HttpResult.ok(sysUserWXService.findResult(openid));
     }
 
     //一开始创建一个初始表
@@ -40,6 +48,7 @@ public class SysUserWXController {
         sysuserT.setAvatar(avatar);
         return sysUserWXService.create(sysuserT);
     }
+
 
     //获取openid
     @GetMapping(value = "/getopenid")

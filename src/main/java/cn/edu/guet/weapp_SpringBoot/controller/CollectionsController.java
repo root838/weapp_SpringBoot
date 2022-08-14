@@ -34,6 +34,13 @@ public class CollectionsController {
         }
     }
 
+    @GetMapping("/searchCollection")
+    public List<Article> searchCollection(String conditions,String open_id){
+        String searchCondition = "%"+conditions+"%";
+        System.out.println("查询条件="+searchCondition);
+        return collectionsService.searchCollection(searchCondition,open_id);
+    }
+
     @GetMapping("/solveCollection")
     public String solveCollection(boolean value,String open_id,String article_id) {
         //System.out.println("value = " + value);

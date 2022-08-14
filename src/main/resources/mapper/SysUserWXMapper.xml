@@ -10,7 +10,15 @@
         <result column="idcard_number" jdbcType="VARCHAR" property="idcard_number"/>
         <result column="birthday" jdbcType="TIMESTAMP" property="birthday"/>
         <result column="phone_number" jdbcType="VARCHAR" property="phone_number"/>
+    </resultMap>
 
+    <resultMap id="ResultMap" type="cn.edu.guet.weapp_SpringBoot.bean.HResult">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="openid" jdbcType="VARCHAR" property="openid"/>
+        <result column="constitution" jdbcType="VARCHAR" property="constitution"/>
+        <result column="performance" jdbcType="VARCHAR" property="performance"/>
+        <result column="opinion" jdbcType="VARCHAR" property="opinion"/>
+        <result column="time" jdbcType="TIMESTAMP" property="time"/>
     </resultMap>
     <sql id="Base_Column_List">
         id
@@ -33,4 +41,10 @@
     <insert id="savaAll" parameterType="SysUserWX">
         UPDATE user SET name=#{name},gender=#{gender},idcard_type=#{idcard_type},idcard_number=#{idcard_number},birthday=#{birthday},phone_number=#{phone_number} WHERE id=#{id}
     </insert>
+    <select id="findResult" resultMap="ResultMap">
+        select *
+        from result
+        where openid=#{openid}
+    </select>
+
 </mapper>
