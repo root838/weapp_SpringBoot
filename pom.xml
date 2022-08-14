@@ -117,7 +117,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>weapp_SpringBoot</finalName>
+		<finalName>weapp_springboot</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
