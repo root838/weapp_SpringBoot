@@ -84,7 +84,7 @@ public class DoctorController {
     @PostMapping(value = "/updateMsg")
     public HttpResult updateMsg(@RequestBody Doctor_Update updateDoctor){
         try{
-            updateDoctor.setAvatar(src);
+            //updateDoctor.setAvatar(src);
             System.out.println(updateDoctor);
             doctorService.updateDoctor(updateDoctor);
             return HttpResult.ok("修改成功");
