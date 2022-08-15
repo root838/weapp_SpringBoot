@@ -3,10 +3,7 @@ package cn.edu.guet.weapp_SpringBoot.controller;
 import cn.edu.guet.weapp_SpringBoot.http.HttpResult;
 import cn.edu.guet.weapp_SpringBoot.service.HospitalService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -32,5 +29,10 @@ public class HospitalController {
     @GetMapping(value = "/getUserHospitalList")
     public HttpResult getUserHospitalList(){
         return HttpResult.ok(hospitalService.getUserHospitalList());
+    }
+
+    @GetMapping(value = "/ai")
+    public HttpResult getRecommendedHospital(@RequestParam String disease){
+        return HttpResult.ok(hospitalService.getRecommendedHospital(disease));
     }
 }

@@ -6,6 +6,7 @@ import cn.edu.guet.weapp_SpringBoot.service.HospitalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -31,6 +32,31 @@ public  class HospitalServiceImpl implements HospitalService {
     }
 
     @Override
+    public List<Hospital> getRecommendedHospital(String disease) {
+        String[] x = disease.split("，");
+        List<String> hospitalId=new ArrayList<>();
+
+        for(int i=0;i<x.length;i++){
+            hospitalId.add(hospitalMapper.getHospitalIdByDoctorSkill(x[i]).get(0));
+        }
+        int s[]=new int[hospitalId.size()];
+        for(int i=0;i<hospitalId.size();i++){
+            s[i]=0;
+            for (int j=1;j<hospitalId.size();j++){
+                if(hospitalId.get(i)==hospitalId.get(j)){
+                    s[i]++;
+                }
+            }
+        }
+        int max=0;
+        for (int i=0;i<s.length;i++){
+            if(max<s[i]){
+                max=i;
+            }
+        }
+        return hospitalMapper.getHospitalById(hospitalId.get(max));
+    }
+
     public void deleteHospital(String id) { hospitalMapper.deleteHospital(id);}
 
     @Override
