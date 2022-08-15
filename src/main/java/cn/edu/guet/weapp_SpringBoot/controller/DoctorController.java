@@ -20,10 +20,9 @@ import java.util.List;
 @RequestMapping("doctor")
 public class DoctorController {
 
-//    private String filePath  = "/root/img/";
+
     private String filePath  = "C:/Users/MECHREVO/Desktop/img/";//实际存储的地址
     private String fileName = "";
-    //    private String baseUrl="http://47.95.223.172/img/";
     private String baseUrl="C:/Users/MECHREVO/Desktop/img/";//src地址
     private String src = "";
     Doctor doctor=new Doctor();
@@ -84,7 +83,6 @@ public class DoctorController {
     @PostMapping(value = "/updateMsg")
     public HttpResult updateMsg(@RequestBody Doctor_Update updateDoctor){
         try{
-            //updateDoctor.setAvatar(src);
             System.out.println(updateDoctor);
             doctorService.updateDoctor(updateDoctor);
             return HttpResult.ok("修改成功");
