@@ -13,13 +13,12 @@ import java.io.IOException;
 
 
 @RestController
-@RequestMapping("hospital")
+@RequestMapping("/hospital")
 
 public class HospitalController {
-    //    private String filePath  = "/root/img/";
     private String filePath  = "C:/Users/MECHREVO/Desktop/img/";//实际存储的地址
     private String fileName = "";
-    //    private String baseUrl="http://47.95.223.172/img/";
+
     private String baseUrl="C:/Users/MECHREVO/Desktop/img/";//src地址
     private String src = "";
     Hospital Hospital=new Hospital();
@@ -29,8 +28,8 @@ public class HospitalController {
 
     @GetMapping(value = "/getHospitalList")
     public HttpResult getHospitalList(){
-        //System.out.println(hospitalService.getHospitalList());
-        //测试可行性
+        System.out.println("aaaaaa");
+        System.out.println(hospitalService.getHospitalList());
         return HttpResult.ok(hospitalService.getHospitalList());
     }
 
