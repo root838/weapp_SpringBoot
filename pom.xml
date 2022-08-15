@@ -97,7 +97,12 @@
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
-			<version>1.9.3</version>
+			<version>1.9.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
 		</dependency>
 
 		<!-- lombok依赖 -->
@@ -112,6 +117,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>weapp_springboot</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -20,6 +20,12 @@ public  class HospitalServiceImpl implements HospitalService {
     }
 
     @Override
+    public List<Hospital> searchHospital(String name) {
+        name="%"+name+"%";
+        return hospitalMapper.searchHospital(name);
+    }
+
+    @Override
     public List<User_Hospital> getUserHospitalList() {
         return hospitalMapper.getUserHospitalList();
     }

@@ -12,6 +12,7 @@ public interface HospitalMapper {
 
 
     List<Hospital> getHospitalList();
+    List<Hospital> searchHospital(@Param(value = "name") String name);
     List<User_Hospital> getUserHospitalList();
     void deleteHospital(@Param(value = "id") String id);
     void insertMsg(@Param(value = "hospital") Hospital hospital);

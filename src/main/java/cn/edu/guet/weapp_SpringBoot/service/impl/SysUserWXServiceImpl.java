@@ -1,5 +1,6 @@
 package cn.edu.guet.weapp_SpringBoot.service.impl;
 
+import cn.edu.guet.weapp_SpringBoot.bean.HResult;
 import cn.edu.guet.weapp_SpringBoot.bean.SysUserWX;
 import cn.edu.guet.weapp_SpringBoot.mapper.SysUserWXMapper;
 import cn.edu.guet.weapp_SpringBoot.service.SysUserWXService;
@@ -32,4 +33,10 @@ public class SysUserWXServiceImpl implements SysUserWXService {
     public int savaAll(SysUserWX sysUserwx) {
         return sysUserwxMapper.savaAll(sysUserwx);
     }
+
+    @Override
+    public List<HResult> findResult(String openid) {
+        return sysUserwxMapper.findResult(openid);
+    }
+
 }

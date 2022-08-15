@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.weapp_SpringBoot.mapper.AssessMapper">
+
+    <select id="findAllQuestion" resultType="cn.edu.guet.weapp_SpringBoot.bean.Question">
+        select * from question
+    </select>
+
+    <insert id="addResult" parameterType="cn.edu.guet.weapp_SpringBoot.bean.Result">
+        insert into result(openid,constitution,performance,opinion)
+        VALUES(#{Result.openid},#{Result.constitution},#{Result.performance},#{Result.opinion})
+    </insert>
+
+    <select id="getAssessNum" resultType="int">
+        SELECT COUNT(*)
+        FROM(SELECT openid FROM result GROUP BY openid) x
+    </select>
+
+</mapper>

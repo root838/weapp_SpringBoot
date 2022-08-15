@@ -1,25 +1,16 @@
 package cn.edu.guet.weapp_SpringBoot.service;
 
-import cn.edu.guet.weapp_SpringBoot.bean.*;
+import cn.edu.guet.weapp_SpringBoot.bean.Hospital;
+import cn.edu.guet.weapp_SpringBoot.bean.User_Hospital;
 
 import java.util.List;
-import java.util.Map;
 
-
+/**
+ * @Author Pangjiaen
+ * @Date 2022/8/11 11:58:30
+ */
 public interface HospitalService {
-    //列表
     List<Hospital> getHospitalList();
-    //列表
+    List<Hospital> searchHospital(String name);
     List<User_Hospital> getUserHospitalList();
-    //删除医院
-    void deleteHospital(String id);
-    //添加医院
-    void updateHospital(Hospital_Update updateHospital);
-
-    //插入
-    void insertHospital(Hospital hospital);
-
-
-
-
 }
