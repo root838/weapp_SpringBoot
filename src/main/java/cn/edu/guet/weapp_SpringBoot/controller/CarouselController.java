@@ -21,7 +21,7 @@ import java.util.List;
 public class CarouselController {
     private String filePath  = "/root/image/";
     private String fileName = "";
-    private String baseUrl="http://47.95.223.172/image/";
+    private String baseUrl="http://47.95.223.172:90/image/";
     private String src = "";
     @Autowired
     private SysCarouselMapper sysCarouselMapper;
@@ -37,6 +37,7 @@ public class CarouselController {
             file1.mkdirs();
         }
         fileName = filePath+ realName;
+        System.out.println(fileName);
         src = baseUrl+realName;
         file.transferTo(new File(fileName));
         
