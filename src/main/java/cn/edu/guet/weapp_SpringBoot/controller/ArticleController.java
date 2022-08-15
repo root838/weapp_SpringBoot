@@ -62,7 +62,7 @@ public class ArticleController {
         aricle.setContent(content);
         aricle.setTitle(title);
         aricle.setTime(nowTime);
-        aricle.setImg("http://47.95.223.172/image/"+id+".png");
+        aricle.setImg("http://47.95.223.172:90/image/"+id+".png");
         System.out.println("时间1："+aricle.getTime());
         return articleService.newAricle(aricle);
     }

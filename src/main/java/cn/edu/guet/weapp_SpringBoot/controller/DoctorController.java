@@ -23,7 +23,7 @@ public class DoctorController {
 
     private String filePath  = "/root/image/";//实际存储的地址
     private String fileName = "";
-    private String baseUrl="http://47.95.223.172/image/";//src地址
+    private String baseUrl="http://47.95.223.172:90/image/";//src地址
     private String src = "";
     Doctor doctor=new Doctor();
 
