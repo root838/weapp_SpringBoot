@@ -25,4 +25,14 @@
         SELECT * FROM user_hospital
     </select>
 
+    <select id="getHospitalIdByDoctorSkill" resultType="String">
+        SELECT hospital_id FROM doctor
+        WHERE skill=#{disease}
+        GROUP BY hospital_id
+    </select>
+
+    <select id="getHospitalById" resultMap="BaseResultMap">
+        select * from hospital where hospital_id=#{id}
+    </select>
+
 </mapper>

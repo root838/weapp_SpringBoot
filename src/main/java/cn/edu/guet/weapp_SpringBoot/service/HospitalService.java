@@ -13,4 +13,5 @@ public interface HospitalService {
     List<Hospital> getHospitalList();
     List<Hospital> searchHospital(String name);
     List<User_Hospital> getUserHospitalList();
+    List<Hospital> getRecommendedHospital(String disease);
 }

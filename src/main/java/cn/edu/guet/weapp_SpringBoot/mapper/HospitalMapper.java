@@ -16,4 +16,6 @@ public interface HospitalMapper {
     List<Hospital> getHospitalList();
     List<Hospital> searchHospital(@Param(value = "name") String name);
     List<User_Hospital> getUserHospitalList();
+    List<String> getHospitalIdByDoctorSkill(@Param(value="disease") String disease);
+    List<Hospital> getHospitalById(@Param(value="id") String id);
 }
