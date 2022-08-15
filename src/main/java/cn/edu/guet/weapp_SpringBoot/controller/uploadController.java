@@ -18,7 +18,7 @@ public class uploadController {
      * @throws IllegalStateException
      */
     //定义上传文件的存放位置
-    private String filePath="/root/img/";
+    private String filePath="/root/image/";
     @PostMapping(value = "/upload")
     public void imageUpload(MultipartFile file) throws IllegalStateException{
         System.out.println(file);

@@ -19,9 +19,9 @@ import java.util.List;
 
 @RestController
 public class CarouselController {
-    private String filePath  = "/root/img/";
+    private String filePath  = "/root/image/";
     private String fileName = "";
-    private String baseUrl="http://47.95.223.172/img/";
+    private String baseUrl="http://47.95.223.172/image/";
     private String src = "";
     @Autowired
     private SysCarouselMapper sysCarouselMapper;

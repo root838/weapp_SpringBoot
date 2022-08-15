@@ -21,9 +21,9 @@ import java.util.List;
 public class DoctorController {
 
 
-    private String filePath  = "C:/Users/MECHREVO/Desktop/img/";//实际存储的地址
+    private String filePath  = "/root/image/";//实际存储的地址
     private String fileName = "";
-    private String baseUrl="C:/Users/MECHREVO/Desktop/img/";//src地址
+    private String baseUrl="http://47.95.223.172/image/";//src地址
     private String src = "";
     Doctor doctor=new Doctor();
 
