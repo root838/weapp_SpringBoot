@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.weapp_SpringBoot.mapper.SyspatientMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.guet.weapp_SpringBoot.bean.Syspatient">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="idcard_type" jdbcType="VARCHAR" property="idcardtype"/>
+        <result column="idcard_number" jdbcType="VARCHAR" property="idcardnumber"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="gender" jdbcType="VARCHAR" property="gender"/>
+        <result column="birthday" jdbcType="VARCHAR" property="birthday"/>
+        <result column="adress" jdbcType="VARCHAR" property="de_addreess"/>
+        <result column="married" jdbcType="VARCHAR" property="married"/>
+        <result column="phone_number" jdbcType="VARCHAR" property="phone_number"/>
+        <result column="relationship" jdbcType="VARCHAR" property="relationship"/>
+    </resultMap>
+
+
+    <select id="getAllList" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select *
+        from patient
+    </select>
+
+    <insert id="savePatient" parameterType="Syspatient">
+        insert into patient(id,idcard_type,idcard_number,name,gender,birthday,adress,married,phone_number,relationship) values(#{id},#{idcardtype},#{idcardnumber},#{name},#{gender},#{birthday},#{de_addreess},#{married},#{phone_number},#{relationship})
+    </insert>
+
+    <delete id="delPatient" parameterType="Syspatient">
+        delete from patient where idcard_number=#{idcardnumber}
+    </delete>
+</mapper>
