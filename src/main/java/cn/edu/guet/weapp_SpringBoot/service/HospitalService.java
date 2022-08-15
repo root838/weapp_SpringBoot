@@ -17,8 +17,5 @@ public interface HospitalService {
 
     //插入
     void insertHospital(Hospital hospital);
-
-
-
-
+    List<Hospital> getRecommendedHospital(String disease);
 }
